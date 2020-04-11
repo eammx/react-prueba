@@ -3,20 +3,27 @@ import { render } from 'react-dom';
 import Hello from './Hello';
 import './style.css';
 
+const SaludarEnIdiomas = ({idioma = 'en',nombre = 'nombre'}) =>{
+  const saludo = idioma === 'es'?'Hola':'Hello';
+  return <p>{saludo} {nombre}</p>
+  }
+
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      name: 'React'
+      name: 'Ernesto'
     };
   }
 
+  
+
   render() {
     return (
-      <div>
-        <Hello name={this.state.name} />
+      <div>        
+        <SaludarEnIdiomas idioma='es' nombre ='ernesto'/>
         <p>
-          Start editing to see some magic happen :)
+          Iniciar aplicación :-)
         </p>
       </div>
     );
